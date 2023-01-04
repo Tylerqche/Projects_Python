@@ -13,7 +13,9 @@ board = [
 #------------------------------------------------------------#
 
 def printBoard(b):
-
+    '''
+    Display's board
+    '''
     for row in range (len(b)):
         if row % 3 == 0 and row != 0:
             print("- - - - - - - - - - -")
@@ -27,7 +29,11 @@ def printBoard(b):
                 print(str(b[row][col]) + " ", end='') 
 
 def findEmpty(b):
-
+    '''
+    Check for empty positions
+    When zero sends to solver
+    if no zero's return None
+    '''
     for row in range(len(b)):
         for col in range(len(b[row])):
             if b[row][col] == 0:
@@ -36,6 +42,7 @@ def findEmpty(b):
 
 def isValid(b, num, pos):
     '''
+    Check if singular position is valid
     b = board
     num = loop iteration 1 - 10
     pos = 0 location
@@ -62,7 +69,11 @@ def isValid(b, num, pos):
     return True
 
 def solve(board):
-
+    '''
+    Solve's board
+    Backtracking using recursion
+    if not True sets position to 0
+    '''
     find = findEmpty(board)
     if not find:
         return True
@@ -82,7 +93,10 @@ def solve(board):
 #------------------------------------------------------------#
 
 def validBoard(board):
-    
+    '''
+    Check if final board is valid
+    Scan's the entire board
+    '''
     if validNumbers(board):
         #Check row
         for i in range(len(board)):
@@ -123,6 +137,9 @@ def validBoard(board):
         print("Invalid Units!")
 
 def validNumbers(board):
+    '''
+    Check's if only valid numbers are present
+    '''
     allowed = {0,1,2,3,4,5,6,7,8,9}
     for i in range(len(board)):
         for j in range(len(board[0])):
