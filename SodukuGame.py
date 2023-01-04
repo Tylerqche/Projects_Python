@@ -141,9 +141,3 @@ def main():
     elif validBoard(board) == False:
         print("Error solving board!")
 main()
-
-
-printBoard(board)
-print("--------------------------")
-solve(board)
-printBoard(board)
