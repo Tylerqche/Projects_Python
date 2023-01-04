@@ -131,6 +131,7 @@ def validNumbers(board):
     return True
 
 #------------------------------------------------------------#
+
 def main():
     printBoard(board)
     print("---------------------")
